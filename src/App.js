@@ -18,7 +18,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchCovids())
-  }, []);
+  }, [dispatch]);
   return (
     <div className="">
       {user.loading && <div>Loading...</div>}
