@@ -25,7 +25,7 @@ function App() {
       {!user.loading && user.error ? <div>ERROR: {user.error}</div> : null}
 
       <div className="flex flex-col text-center w-full">
-        <h1 className="sm:text-3xl text-3xl font-medium title-font mb-2 pt-5 text-gray-900 underline">ToTal Covid-19 Cases</h1>
+        <h1 className="sm:text-3xl text-3xl font-medium title-font mb-2 pt-5 text-gray-900 underline">Covid-19 Cases</h1>
       </div>
 
       <section className="text-gray-600 body-font">
