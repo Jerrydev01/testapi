@@ -5,8 +5,8 @@ import { fetchCovids } from './features/covidSlice'
 
 function App() {
   const dispatch = useDispatch()
-  const user = useSelector((state) => state.user.covid)
-  const users = Object.values(user).map((list) => list)
+  const user = useSelector((state) => state.user)
+  const users = Object.values(user.covid).map((list) => list)
   console.log(user)
 
   // store and render each state
@@ -21,7 +21,7 @@ function App() {
   }, [dispatch]);
   return (
     <div className="">
-      {user.loading && <div>Loading...</div>}
+      {!user.loading && <div>Loading...</div>}
       {!user.loading && user.error ? <div>ERROR: {user.error}</div> : null}
 
       <div className="flex flex-col text-center w-full">
