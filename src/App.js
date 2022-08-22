@@ -11,7 +11,7 @@ function App() {
 
   // store and render each state
   const states = users.map((state) => state.states)
-  const EachStates = states[0]
+  const EachStates = states
   console.log(EachStates);
 
 
@@ -88,21 +88,24 @@ function App() {
                 </tr>
               </thead>
               <tbody>
-                {EachStates.map((state) => {
-                  console.log(state)
-                  return (
-                    <tr key={state._id}>
-                      <td className="px-4 py-3">{state.state}</td>
-                      <td className="px-4 py-3">{state.casesOnAdmission}</td>
-                      <td className="px-4 py-3">{state.confirmedCases}</td>
-                      <td className="px-4 py-3">{state.death}</td>
-                      <td className="px-4 py-3">{state.discharged}</td>
-                      <td className="w-10 text-center">
+                {EachStates.map((state) => (
+                  (
+                    state.map((state) => {
+                      return (
+                        <tr key={state._id}>
+                          <td className="px-4 py-3">{state.state}</td>
+                          <td className="px-4 py-3">{state.casesOnAdmission}</td>
+                          <td className="px-4 py-3">{state.confirmedCases}</td>
+                          <td className="px-4 py-3">{state.death}</td>
+                          <td className="px-4 py-3">{state.discharged}</td>
+                          <td className="w-10 text-center">
 
-                      </td>
-                    </tr>
+                          </td>
+                        </tr>
+                      )
+                    })
                   )
-                })}
+                ))}
 
               </tbody>
             </table>
